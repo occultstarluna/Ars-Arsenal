@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "ars_nouveau:archmage_hood"
+  },
+  "addition": {
+    "item": "arsarsenal:sigil_of_pyromancy"
+  },
+  "result": {
+    "item": "arsarsenal:fire_hood"
+
+  }
+}

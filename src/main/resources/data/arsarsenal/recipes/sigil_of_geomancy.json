@@ -1,0 +1,32 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "item_1": [
+    {
+      "item": "minecraft:iron_ore"
+    }
+  ],
+  "item_2": [
+    {
+      "item": "minecraft:iron_ore"
+    }
+  ],
+  "item_3": [
+    {
+      "item": "minecraft:obsidian"
+    }
+  ],
+  "item_4": [
+    {
+      "item": "minecraft:obsidian"
+    }
+  ],
+  "reagent": [
+    {
+      "item": "ars_nouveau:wilden_tribute"
+    }
+  ],
+  "output": {
+    "item": "arsarsenal:sigil_of_geomancy",
+    "count": 4
+  }
+}

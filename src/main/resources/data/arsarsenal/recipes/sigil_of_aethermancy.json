@@ -1,0 +1,32 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "item_1": [
+    {
+      "item": "minecraft:feather"
+    }
+  ],
+  "item_2": [
+    {
+      "item": "minecraft:feather"
+    }
+  ],
+  "item_3": [
+    {
+      "item": "minecraft:phantom_membrane"
+    }
+  ],
+  "item_4": [
+    {
+      "item": "minecraft:phantom_membrane"
+    }
+  ],
+  "reagent": [
+    {
+      "item": "ars_nouveau:wilden_tribute"
+    }
+  ],
+  "output": {
+    "item": "arsarsenal:sigil_of_pyromancy",
+    "count": 4
+  }
+}

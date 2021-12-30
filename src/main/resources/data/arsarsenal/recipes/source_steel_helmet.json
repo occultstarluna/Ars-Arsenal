@@ -1,0 +1,37 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "item_1": [
+    {
+      "item": "arsarsenal:source_steel_ingot"
+    }
+  ],
+  "item_2": [
+    {
+      "item": "arsarsenal:source_steel_ingot"
+    }
+  ],
+  "item_3": [
+    {
+      "item": "arsarsenal:source_steel_ingot"
+    }
+  ],
+  "item_4": [
+    {
+      "item": "arsarsenal:source_steel_ingot"
+    }
+  ],
+  "item_5": [
+    {
+      "item": "arsarsenal:source_steel_ingot"
+    }
+  ],
+
+  "reagent": [
+    {
+      "item": "ars_nouveau:archmage_hood"
+    }
+  ],
+  "output": {
+    "item": "arsarsenal:source_steel_helmet"
+  }
+}

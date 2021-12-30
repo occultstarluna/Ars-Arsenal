@@ -1,0 +1,32 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "item_1": [
+    {
+      "item": "minecraft:blaze_rod"
+    }
+  ],
+  "item_2": [
+    {
+      "item": "minecraft:blaze_rod"
+    }
+  ],
+  "item_3": [
+    {
+      "item": "minecraft:lava_bucket"
+    }
+  ],
+  "item_4": [
+    {
+      "item": "minecraft:magma_block"
+    }
+  ],
+  "reagent": [
+    {
+      "item": "ars_nouveau:wilden_tribute"
+    }
+  ],
+  "output": {
+    "item": "arsarsenal:sigil_of_pyromancy",
+    "count": 4
+  }
+}

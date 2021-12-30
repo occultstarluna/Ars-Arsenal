@@ -1,0 +1,32 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "item_1": [
+    {
+      "tag": "forge:raw_fishes"
+    }
+  ],
+  "item_2": [
+    {
+      "item": "minecraft:prismarine_crystals"
+    }
+  ],
+  "item_3": [
+    {
+      "item": "minecraft:prismarine_crystals"
+    }
+  ],
+  "item_4": [
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "reagent": [
+    {
+      "item": "ars_nouveau:wilden_tribute"
+    }
+  ],
+  "output": {
+    "item": "arsarsenal:sigil_of_aquamancy",
+    "count": 4
+  }
+}

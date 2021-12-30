@@ -1,0 +1,15 @@
+{
+  "name": "Robes of the Pyromancer",
+  "icon": "arsarsenal:sigil_of_pyromancy",
+  "category": "arsenal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Robes of the Pyromancer enable a wizard who has mastered the art of Pyromancy to ascend beyond their limits."
+    },
+    {
+      "type": "apparatus_recipe",
+      "recipe": "arsarsenal:sigil_of_pyromancy"
+    }
+  ]
+}

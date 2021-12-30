@@ -1,0 +1,15 @@
+{
+  "name": "Robes of the Geomancer",
+  "icon": "arsarsenal:sigil_of_geomancy",
+  "category": "arsenal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Robes of the Geomancer enable a wizard who has mastered the art of Geomancy to ascend beyond their limits."
+    },
+    {
+      "type": "apparatus_recipe",
+      "recipe": "arsarsenal:sigil_of_geomancy"
+    }
+  ]
+}

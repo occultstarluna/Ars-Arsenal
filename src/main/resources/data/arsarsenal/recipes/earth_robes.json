@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "ars_nouveau:archmage_robes"
+  },
+  "addition": {
+    "item": "arsarsenal:sigil_of_geomancy"
+  },
+  "result": {
+    "item": "arsarsenal:earth_robes"
+
+  }
+}
