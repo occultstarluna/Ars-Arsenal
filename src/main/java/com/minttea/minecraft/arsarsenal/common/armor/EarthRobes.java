@@ -13,6 +13,7 @@ public class EarthRobes extends SchoolArmor{
                 DamageSource.STARVE,
                 DamageSource.SWEET_BERRY_BUSH,
                 DamageSource.IN_WALL,
+                DamageSource.FALLING_BLOCK,
                 DamageSource.WITHER));
 
     }

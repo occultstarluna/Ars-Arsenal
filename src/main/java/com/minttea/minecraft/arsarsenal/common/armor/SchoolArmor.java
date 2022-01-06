@@ -28,9 +28,6 @@ public class SchoolArmor extends MagicArmor{
           this.preventedTypes = preventedTypes;
      }
 
-
-
-
      @Override
      public int getMaxManaBoost(){
           return 80;

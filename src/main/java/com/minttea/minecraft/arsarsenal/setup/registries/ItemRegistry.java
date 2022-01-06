@@ -2,8 +2,11 @@ package com.minttea.minecraft.arsarsenal.setup.registries;
 
 import com.minttea.minecraft.arsarsenal.ArsArsenal;
 import com.minttea.minecraft.arsarsenal.common.armor.*;
+import com.minttea.minecraft.arsarsenal.common.items.SourceSteelAxe;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemTier;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -42,6 +45,9 @@ public class ItemRegistry {
     @ObjectHolder("sigil_of_aquamancy")public static Item aquaSigil;
     @ObjectHolder("sigil_of_geomancy")public static Item earthSigil;
     @ObjectHolder("sigil_of_aethermancy")public static Item aetherSigil;
+    @ObjectHolder("uncharged_source_steel_axe")public static AxeItem unbchargedAxe;
+    @ObjectHolder("source_steel_axe")public static SourceSteelAxe chargedAxe;
+
 
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event)
@@ -82,6 +88,9 @@ public class ItemRegistry {
         registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_aquamancy"));
         registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_geomancy"));
         registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_aethermancy"));
+
+        registry.register(new AxeItem(ItemTier.DIAMOND, 4,-1.9f,defaultItemProperties().stacksTo(1)).setRegistryName("uncharged_source_steel_axe"));
+        registry.register(new SourceSteelAxe().setRegistryName("source_steel_axe"));
     }
 
     public static Item.Properties defaultItemProperties() {

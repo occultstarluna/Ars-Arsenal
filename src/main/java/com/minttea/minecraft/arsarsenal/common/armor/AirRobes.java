@@ -11,8 +11,8 @@ public class AirRobes extends SchoolArmor{
     public AirRobes(EquipmentSlotType slot) {
         super(Materials.air, slot, SpellSchools.ELEMENTAL_AIR, Arrays.asList(DamageSource.FALL,
                 DamageSource.FLY_INTO_WALL,
-                DamageSource.DRAGON_BREATH,
-                DamageSource.IN_WALL));
+                DamageSource.IN_WALL,
+                DamageSource.LIGHTNING_BOLT));
 
     }
 }
