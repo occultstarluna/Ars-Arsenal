@@ -5,21 +5,22 @@ import com.hollingsworth.arsnouveau.api.spell.*;
 import com.hollingsworth.arsnouveau.common.capability.ManaCapability;
 import com.hollingsworth.arsnouveau.common.spell.augment.AugmentAOE;
 import com.hollingsworth.arsnouveau.common.spell.augment.AugmentAmplify;
-import com.hollingsworth.arsnouveau.common.spell.effect.EffectCut;
-import com.hollingsworth.arsnouveau.common.spell.effect.EffectFell;
-import com.hollingsworth.arsnouveau.common.spell.effect.EffectHarm;
-import com.hollingsworth.arsnouveau.common.spell.effect.EffectPickup;
+import com.hollingsworth.arsnouveau.common.spell.augment.AugmentFortune;
+import com.hollingsworth.arsnouveau.common.spell.effect.*;
 import com.hollingsworth.arsnouveau.common.spell.method.MethodTouch;
 import com.hollingsworth.arsnouveau.common.util.PortUtil;
 import com.minttea.minecraft.arsarsenal.client.renderer.item.AxeRenderer;
+import com.minttea.minecraft.arsarsenal.client.renderer.item.PickRenderer;
 import com.minttea.minecraft.arsarsenal.setup.registries.ItemRegistry;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.text.ITextComponent;
@@ -33,9 +34,9 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SourceSteelAxe extends AxeItem implements ICasterTool, IAnimatable {
-    public SourceSteelAxe() {
-        super(ItemTier.NETHERITE, 5, -3.1f, ItemRegistry.defaultItemProperties().stacksTo(1).setISTER(() -> AxeRenderer::new));
+public class SourceSteelPick extends PickaxeItem implements ICasterTool, IAnimatable {
+    public SourceSteelPick() {
+        super(ItemTier.NETHERITE, 3, -2.8f, ItemRegistry.defaultItemProperties().stacksTo(1).setISTER(() -> PickRenderer::new));
     }
 
     @Override
@@ -69,25 +70,26 @@ public class SourceSteelAxe extends AxeItem implements ICasterTool, IAnimatable 
         for (AbstractSpellPart part: spell.recipe
         ) {
             recipe.add(part);
-            if ( part instanceof EffectCut)
+            if ( part instanceof EffectBreak)
+            {
+                recipe.add(AugmentAmplify.INSTANCE);
+                recipe.add(AugmentAmplify.INSTANCE);
+                recipe.add(AugmentFortune.INSTANCE);
+                recipe.add(AugmentFortune.INSTANCE);
+                recipe.add(AugmentFortune.INSTANCE);
+                discount = (AugmentAmplify.INSTANCE.getManaCost() * 2) + (AugmentFortune.INSTANCE.getManaCost() * 3);
+            } else if( part instanceof EffectCrush)
             {
                 recipe.add(AugmentAmplify.INSTANCE);
                 recipe.add(AugmentAmplify.INSTANCE);
                 recipe.add(AugmentAmplify.INSTANCE);
                 recipe.add(AugmentAmplify.INSTANCE);
-                discount = AugmentAmplify.INSTANCE.getManaCost() * 4;
-            } else if( part instanceof EffectFell)
-            {
-                recipe.add(AugmentAOE.INSTANCE);
-                recipe.add(AugmentAOE.INSTANCE);
-                recipe.add(AugmentAOE.INSTANCE);
-                recipe.add(AugmentAOE.INSTANCE);
                 discount = AugmentAOE.INSTANCE.getManaCost() * 4;
             }else if(part instanceof AbstractEffect)
             {
-                recipe.add(AugmentAmplify.INSTANCE);
-                recipe.add(AugmentAmplify.INSTANCE);
-                discount = AugmentAmplify.INSTANCE.getManaCost() * 2;
+                recipe.add(AugmentFortune.INSTANCE);
+                recipe.add(AugmentFortune.INSTANCE);
+                discount = (AugmentFortune.INSTANCE.getManaCost() * 2);
             }
         }
         recipe.add(EffectPickup.INSTANCE);
@@ -96,7 +98,7 @@ public class SourceSteelAxe extends AxeItem implements ICasterTool, IAnimatable 
         recipe.add(AugmentAOE.INSTANCE);
         recipe.add(AugmentAOE.INSTANCE);
         spell.recipe = recipe;
-
+        spell.setCost(spell.getCastingCost() - discount);
         return ICasterTool.super.setSpell(caster, player, hand, stack, spell);
     }
 
@@ -104,18 +106,25 @@ public class SourceSteelAxe extends AxeItem implements ICasterTool, IAnimatable 
     public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getItemInHand(handIn);
         ISpellCaster caster = getSpellCaster(stack);
-        return caster.castSpell(worldIn, playerIn, handIn, new TranslationTextComponent("ars_nouveau.wand.invalid"));
-    }
-
-    @Override
-    public ActionResultType useOn(ItemUseContext context) {
-        if(context.getPlayer().isCrouching())
-        {
-            return super.useOn(context);
-        } else
-        {
-            return ActionResultType.PASS;
+        int discount = 0;
+        Spell spell = caster.getSpell();
+        for (AbstractSpellPart part: spell.recipe
+        ) {
+            if ( part instanceof EffectBreak)
+            {
+                discount = (AugmentAmplify.INSTANCE.getManaCost() * 2) + (AugmentFortune.INSTANCE.getManaCost() * 3) + (AugmentAOE.INSTANCE.getManaCost() * 4) + EffectPickup.INSTANCE.getManaCost();
+            } else if( part instanceof EffectCrush)
+            {
+                discount = AugmentAOE.INSTANCE.getManaCost() * 4 + (AugmentAOE.INSTANCE.getManaCost() * 4) + EffectPickup.INSTANCE.getManaCost();
+            }else if(part instanceof AbstractEffect)
+            {
+                discount = (AugmentFortune.INSTANCE.getManaCost() * 2) + (AugmentAOE.INSTANCE.getManaCost() * 4) + EffectPickup.INSTANCE.getManaCost();
+            }
         }
+
+        spell.setCost(spell.getCastingCost() - discount);
+        caster.setSpell(spell);
+        return caster.castSpell(worldIn, playerIn, handIn, new TranslationTextComponent("ars_nouveau.wand.invalid"));
     }
 
     @Override

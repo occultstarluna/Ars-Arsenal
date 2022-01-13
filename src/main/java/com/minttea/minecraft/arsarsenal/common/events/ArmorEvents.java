@@ -34,15 +34,12 @@ public class ArmorEvents {
 
             }
         }
-
-        PortUtil.sendMessage(event.caster, new StringTextComponent("Old damage"));
     }
 
     @SubscribeEvent
     public static void spellCastEvent(SpellCastEvent event)
     {
         double discount = 0;
-        PortUtil.sendMessage(event.getEntityLiving(), new StringTextComponent("Old cost: " + event.spell.getCastingCost()));
         for(ItemStack stack:event.getEntityLiving().getArmorSlots())
         {
             if(stack.getItem() instanceof SchoolArmor)
@@ -53,7 +50,7 @@ public class ArmorEvents {
         }
 
         event.spell.setCost((int) (event.spell.getCastingCost() * (1-discount)));
-        PortUtil.sendMessage(event.getEntityLiving(), new StringTextComponent("New cost: " + event.spell.getCastingCost()));
+
     }
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {

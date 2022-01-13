@@ -1,9 +1,11 @@
 {
-  "itemGroup.tomeofblood": "Ars Arsenal",
+  "itemGroup.arsarsenal": "Ars Arsenal",
   "item.arsarsenal.source_steel_helmet": "Source Steel Helmet",
   "item.arsarsenal.source_steel_chestplate": "Source Steel Chestplate",
   "item.arsarsenal.source_steel_leggings": "Source Steel Leggings",
   "item.arsarsenal.source_steel_boots": "Source Steel Boots",
+  "item.arsarsenal.source_steel_axe": "Source Steel Axe",
+  "item.arsarsenal.source_steel_pickaxe": "Source Steel Pick",
   "item.arsarsenal.source_steel_ingot": "Source Steel Ingot",
   "item.arsarsenal.primed_iron_ingot": "Primed Iron Ingot",
 

@@ -1,0 +1,46 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    32,
+    32
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        24,
+        45.75,
+        -49.25
+      ],
+      "translation": [
+        -3,
+        -4.25,
+        0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "head": {
+      "translation": [
+        0,
+        6.5,
+        0
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        -90,
+        0
+      ],
+      "translation": [
+        0,
+        -10,
+        -0.5
+      ]
+    }
+  }
+}

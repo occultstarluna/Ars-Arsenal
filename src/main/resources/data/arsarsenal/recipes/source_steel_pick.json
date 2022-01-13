@@ -1,0 +1,26 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "item_1": [
+    {
+      "item": "arsarsenal:source_steel_ingot"
+    }
+  ],
+  "item_2": [
+    {
+      "item": "arsarsenal:source_steel_ingot"
+    }
+  ],
+  "item_3": [
+    {
+      "item": "arsarsenal:source_steel_ingot"
+    }
+  ],
+  "reagent": [
+    {
+      "item": "minecraft:netherite_pickaxe"
+    }
+  ],
+  "output": {
+    "item": "arsarsenal:source_steel_pickaxe"
+  }
+}

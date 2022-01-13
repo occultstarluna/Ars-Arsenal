@@ -1,5 +1,5 @@
 {
-  "name": "Primed Iron Ingot",
+  "name": "Source Steel",
   "icon": "arsarsenal:source_steel_ingot",
   "category": "arsenal",
   "pages": [
@@ -8,12 +8,8 @@
       "text": "When making Source Steel, you must inject your iron with source.  To begin this process, combine your ingot with Mythical Clay on your glyph press."
     },
     {
-      "type": "glyph_recipe",
-      "recipe": "arsarsenal:primed_iron_ingot",
-      "tier": "THREE",
-      "mana_cost": "Medium",
-      "clay_type": "ars_nouveau:mythica;_clay",
-      "reagent": "minecraft:iron_ingot"
+      "type": "text",
+      "text": "[Glyph recipe display broken, use JEI.]"
     },
     {
       "type": "text",
@@ -22,26 +18,6 @@
     {
       "type": "apparatus_recipe",
     "recipe": "arsarsenal:source_steel_ingot"
-    },
-    {
-      "type":"text",
-      "text": "Once you've created your source steel, utilize your enchanting apparatus to plate your Archmage Robes. (Note, not enchantment safe.)"
-    },
-    {
-      "type": "apparatus_recipe",
-      "recipe": "arsarsenal:source_steel_helmet"
-    },
-    {
-      "type": "apparatus_recipe",
-      "recipe": "arsarsenal:source_steel_chestplate"
-    },
-    {
-      "type": "apparatus_recipe",
-      "recipe": "arsarsenal:source_steel_leggings"
-    },
-    {
-      "type": "apparatus_recipe",
-      "recipe": "arsarsenal:source_steel_boots"
     }
 
   ]

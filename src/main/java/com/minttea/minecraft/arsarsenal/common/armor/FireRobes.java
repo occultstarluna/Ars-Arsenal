@@ -17,5 +17,9 @@ public class FireRobes extends  SchoolArmor{
 
 
     }
+    @Override
+    public String getTextureName() {
 
+        return "pyro_hat";
+    }
 }

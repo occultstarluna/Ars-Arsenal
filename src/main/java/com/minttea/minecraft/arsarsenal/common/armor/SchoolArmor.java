@@ -13,10 +13,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import java.util.List;
 
-public class SchoolArmor extends MagicArmor{
+public class SchoolArmor extends MagicArmor implements IAnimatable {
 
 
      private SpellSchool school;
@@ -26,16 +29,18 @@ public class SchoolArmor extends MagicArmor{
           super(material, slot, ItemRegistry.defaultItemProperties());
           this.school = school;
           this.preventedTypes = preventedTypes;
+
      }
+
 
      @Override
      public int getMaxManaBoost(){
-          return 80;
+          return 100;
      }
 
      @Override
      public int getManaRegenBonus(){
-          return 6;
+          return 9;
      }
 
 
@@ -68,5 +73,18 @@ public class SchoolArmor extends MagicArmor{
           return 0;
      }
 
+     @Override
+     public void registerControllers(AnimationData animationData) {
 
+     }
+     public AnimationFactory factory = new AnimationFactory(this);
+
+     @Override
+     public AnimationFactory getFactory() {
+          return factory;
+     }
+
+     public String getTextureName() {
+          return "magic_hat";
+     }
 }

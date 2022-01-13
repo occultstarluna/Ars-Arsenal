@@ -13,7 +13,7 @@ apply plugin: "com.wynprice.cursemaven"
 apply plugin: 'net.minecraftforge.gradle'
 
 group = 'com.minttea.minecraft'
-version = '1.0-RC1'
+version = '0.1.2'
 archivesBaseName = 'arsarsenal'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
@@ -147,6 +147,8 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:patchouli:3126931")
     compileOnly fg.deobf("curse.maven:ars-noveau:3468666")
     runtimeOnly fg.deobf("curse.maven:ars-noveau:3468666")
+    compileOnly fg.deobf("curse.maven:eidolon:3157832")
+    runtimeOnly fg.deobf("curse.maven:eidolon:3157832")
     compileOnly fg.deobf("curse.maven:jei:3280391")
     runtimeOnly fg.deobf("curse.maven:jei:3280391")
 }
