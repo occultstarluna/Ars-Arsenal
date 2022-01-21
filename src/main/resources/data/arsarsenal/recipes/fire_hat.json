@@ -4,10 +4,10 @@
     "item": "ars_nouveau:archmage_hood"
   },
   "addition": {
-    "item": "arsarsenal:sigil_of_geomancy"
+    "item": "arsarsenal:sigil_of_pyromancy"
   },
   "result": {
-    "item": "arsarsenal:earth_hood"
+    "item": "arsarsenal:fire_hat"
 
   }
 }
