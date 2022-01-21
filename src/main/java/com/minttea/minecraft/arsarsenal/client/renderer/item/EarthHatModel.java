@@ -14,7 +14,7 @@ public class EarthHatModel extends AnimatedGeoModel<EarthHat> {
 
     @Override
     public ResourceLocation getTextureLocation(EarthHat hat) {
-        return  new ResourceLocation(ArsArsenal.MODID, "textures/items/"+hat.getTextureName()+".png");
+        return  new ResourceLocation(ArsArsenal.MODID, "textures/items/"+hat.getTextureName()+"_tex.png");
     }
 
     @Override

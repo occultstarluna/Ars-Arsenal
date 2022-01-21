@@ -15,7 +15,7 @@ public class FireHatModel extends AnimatedGeoModel<FireHat> {
 
     @Override
     public ResourceLocation getTextureLocation(FireHat hat) {
-        return  new ResourceLocation(ArsArsenal.MODID, "textures/items/"+hat.getTextureName()+".png");
+        return  new ResourceLocation(ArsArsenal.MODID, "textures/items/"+hat.getTextureName()+"_tex.png");
     }
 
     @Override
