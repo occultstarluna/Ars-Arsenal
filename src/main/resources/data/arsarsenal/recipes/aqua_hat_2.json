@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "arsarsenal:aqua_hood"
+    }
+  ],
+  "result": {
+    "item": "arsarsenal:aqua_hat"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Specialist Robes",
+  "icon": "arsarsenal:fire_robes",
+  "category": "arsenal",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "There are further ways to augment a wizard.  Combine your archmage robes with sigils of an element to improve your elemental spells!"
+    },
+    {
+      "type": "apparatus_recipe",
+      "recipe": "arsarsenal:sigil_of_aethermancy"
+    },
+    {
+      "type": "apparatus_recipe",
+      "recipe": "arsarsenal:sigil_of_aquamancy"
+    },
+    {
+      "type": "apparatus_recipe",
+      "recipe": "arsarsenal:sigil_of_geomancy"
+    },
+    {
+      "type": "apparatus_recipe",
+      "recipe": "arsarsenal:sigil_of_pyromancy"
+    }
+  ]
+}

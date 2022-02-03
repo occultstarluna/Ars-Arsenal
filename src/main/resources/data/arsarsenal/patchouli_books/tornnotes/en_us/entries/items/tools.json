@@ -2,6 +2,7 @@
   "name": "Source Steel Tools",
   "icon": "arsarsenal:source_steel_axe",
   "category": "arsenal",
+  "sortnum" :3,
   "pages": [
     {
       "type":"text",
@@ -13,7 +14,7 @@
     },
     {
       "type":"text",
-      "text": "The Source Steel Axe benefits spells like Fell and Cut, with a lesser benefit to any other spells. [Touch Spells]"
+      "text": "The Source Steel Axe benefits touch spells with Fell and Cut, with a lesser benefit to any other effects."
     },
     {
       "type": "apparatus_recipe",
@@ -21,7 +22,7 @@
     },
     {
       "type":"text",
-      "text": "The Source Steel Pickaxe benefits spells like Break and Crush, with a lesser benefit to any other spells. [Touch Spells]"
+      "text": "The Source Steel Pickaxe benefits  benefits touch spells with Break and Crush, with a lesser benefit to any other effects."
     },
     {
       "type": "apparatus_recipe",

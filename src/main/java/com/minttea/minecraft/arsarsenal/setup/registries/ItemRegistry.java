@@ -1,6 +1,8 @@
 package com.minttea.minecraft.arsarsenal.setup.registries;
 
 import com.minttea.minecraft.arsarsenal.ArsArsenal;
+import com.minttea.minecraft.arsarsenal.client.renderer.item.AirHatRenderer;
+import com.minttea.minecraft.arsarsenal.client.renderer.item.AquaHatRenderer;
 import com.minttea.minecraft.arsarsenal.client.renderer.item.EarthHatRenderer;
 import com.minttea.minecraft.arsarsenal.client.renderer.item.FireHatRenderer;
 import com.minttea.minecraft.arsarsenal.common.armor.*;
@@ -32,10 +34,11 @@ public class ItemRegistry {
     @ObjectHolder("source_steel_leggings")public static SourceSteelArmor sourceSteelLeggings;
     @ObjectHolder("source_steel_boots")public static SourceSteelArmor sourceSteelBoots;
     @ObjectHolder("fire_hat")public static FireHat fireHat;
-    @ObjectHolder("fire_hood")public static FireHat fireHood;
+    @ObjectHolder("fire_hood")public static FireRobes fireHood;
     @ObjectHolder("fire_robes")public static FireRobes fireRobe;
     @ObjectHolder("fire_leggings")public static FireRobes fireLegs;
     @ObjectHolder("fire_boots")public static FireRobes fireBoots;
+    @ObjectHolder("aqua_hat")public static AquaHat aquaHat;
     @ObjectHolder("aqua_hood")public static AquaRobes aquaHood;
     @ObjectHolder("aqua_robes")public static AquaRobes aquaRobe;
     @ObjectHolder("aqua_leggings")public static AquaRobes aquaLegs;
@@ -45,6 +48,7 @@ public class ItemRegistry {
     @ObjectHolder("earth_robes")public static EarthRobes earthRobe;
     @ObjectHolder("earth_leggings")public static EarthRobes earthLegs;
     @ObjectHolder("earth_boots")public static EarthRobes earthBoots;
+    @ObjectHolder("air_hat")public static AirHat airHat;
     @ObjectHolder("air_hood")public static AirRobes airHood;
     @ObjectHolder("air_robes")public static AirRobes airRobe;
     @ObjectHolder("air_leggings")public static AirRobes airLegs;
@@ -80,6 +84,7 @@ public class ItemRegistry {
         registry.register(new FireRobes(EquipmentSlotType.LEGS).setRegistryName("fire_leggings"));
         registry.register(new FireRobes(EquipmentSlotType.FEET).setRegistryName("fire_boots"));
 
+        registry.register(new AquaHat().setRegistryName("aqua_hat"));
         registry.register(new AquaRobes(EquipmentSlotType.HEAD).setRegistryName("aqua_hood"));
         registry.register(new AquaRobes(EquipmentSlotType.CHEST).setRegistryName("aqua_robes"));
         registry.register(new AquaRobes(EquipmentSlotType.LEGS).setRegistryName("aqua_leggings"));
@@ -91,6 +96,7 @@ public class ItemRegistry {
         registry.register(new EarthRobes(EquipmentSlotType.LEGS).setRegistryName("earth_leggings"));
         registry.register(new EarthRobes(EquipmentSlotType.FEET).setRegistryName("earth_boots"));
 
+        registry.register(new AirHat().setRegistryName("air_hat"));
         registry.register(new AirRobes(EquipmentSlotType.HEAD).setRegistryName("air_hood"));
         registry.register(new AirRobes(EquipmentSlotType.CHEST).setRegistryName("air_robes"));
         registry.register(new AirRobes(EquipmentSlotType.LEGS).setRegistryName("air_leggings"));
@@ -119,5 +125,7 @@ public class ItemRegistry {
 
         GeoArmorRenderer.registerArmorRenderer(FireHat.class, new FireHatRenderer());
         GeoArmorRenderer.registerArmorRenderer(EarthHat.class, new EarthHatRenderer());
+        GeoArmorRenderer.registerArmorRenderer(AquaHat.class, new AquaHatRenderer());
+        GeoArmorRenderer.registerArmorRenderer(AirHat.class, new AirHatRenderer());
     }
 }
