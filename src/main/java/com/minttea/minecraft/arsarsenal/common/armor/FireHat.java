@@ -8,6 +8,8 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import software.bernie.geckolib3.item.GeoArmorItem;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
@@ -30,7 +32,8 @@ public class FireHat extends SchoolArmor {
         return "fire_hat";
     }
 
-    @Nullable
+    @SuppressWarnings("unchecked")
+    @OnlyIn(Dist.CLIENT)
     @Override
     public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
         return (A) GeoArmorRenderer.getRenderer(this.getClass()).applyEntityStats(_default).applySlot(armorSlot).setCurrentItem(entityLiving,itemStack,armorSlot);
