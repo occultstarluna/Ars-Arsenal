@@ -1,32 +1,26 @@
 {
-  "type": "ars_nouveau:enchanting_apparatus",
-  "item_1": [
+  "type": "ars_nouveau:imbuement",
+  "input": {
+    "item": "ars_nouveau:wilden_tribute"
+  },
+  "output": "arsarsenal:sigil_of_geomancy",
+  "count": 4,
+  "source": 2000,
+  "pedestalItems": [
     {
-      "item": "minecraft:iron_ore"
-    }
-  ],
-  "item_2": [
+      "item": {
+        "item": "ars_nouveau:earth_essence"
+      }
+    },
     {
-      "item": "minecraft:iron_ore"
-    }
-  ],
-  "item_3": [
+      "item": {
+        "item": "ars_nouveau:earth_essence"
+      }
+    },
     {
-      "item": "minecraft:obsidian"
+      "item": {
+        "item": "ars_nouveau:earth_essence"
+      }
     }
-  ],
-  "item_4": [
-    {
-      "item": "minecraft:obsidian"
-    }
-  ],
-  "reagent": [
-    {
-      "item": "ars_nouveau:wilden_tribute"
-    }
-  ],
-  "output": {
-    "item": "arsarsenal:sigil_of_geomancy",
-    "count": 4
-  }
+  ]
 }

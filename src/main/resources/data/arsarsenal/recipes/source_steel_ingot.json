@@ -1,51 +1,26 @@
 {
-  "type": "ars_nouveau:enchanting_apparatus",
-  "item_1": [
+  "type": "ars_nouveau:imbuement",
+  "input": {
+    "tag": "forge:ingots/netherite"
+  },
+  "output": "arsarsenal:source_steel_ingot",
+  "count": 1,
+  "source": 1000,
+  "pedestalItems": [
     {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_2": [
+      "item": {
+        "tag": "forge:gems/source"
+      }
+    },
     {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_3": [
+      "item": {
+        "tag": "forge:gems/source"
+      }
+    },
     {
-      "tag": "forge:gems/mana"
+      "item": {
+        "tag": "forge:gems/source"
+      }
     }
-  ],
-  "item_4": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_5": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_6": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_7": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_8": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "reagent": [
-    {
-      "item": "arsarsenal:primed_iron_ingot"
-    }
-  ],
-  "output": {
-    "item": "arsarsenal:source_steel_ingot"
-  }
+  ]
 }

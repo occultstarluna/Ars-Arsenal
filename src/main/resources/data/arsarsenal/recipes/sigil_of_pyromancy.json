@@ -1,32 +1,26 @@
 {
-  "type": "ars_nouveau:enchanting_apparatus",
-  "item_1": [
+  "type": "ars_nouveau:imbuement",
+  "input": {
+    "item": "ars_nouveau:wilden_tribute"
+  },
+  "output": "arsarsenal:sigil_of_pyromancy",
+  "count": 4,
+  "source": 2000,
+  "pedestalItems": [
     {
-      "item": "minecraft:blaze_rod"
-    }
-  ],
-  "item_2": [
+      "item": {
+        "item": "ars_nouveau:fire_essence"
+      }
+    },
     {
-      "item": "minecraft:blaze_rod"
-    }
-  ],
-  "item_3": [
+      "item": {
+        "item": "ars_nouveau:fire_essence"
+      }
+    },
     {
-      "item": "minecraft:lava_bucket"
+      "item": {
+        "item": "ars_nouveau:fire_essence"
+      }
     }
-  ],
-  "item_4": [
-    {
-      "item": "minecraft:magma_block"
-    }
-  ],
-  "reagent": [
-    {
-      "item": "ars_nouveau:wilden_tribute"
-    }
-  ],
-  "output": {
-    "item": "arsarsenal:sigil_of_pyromancy",
-    "count": 4
-  }
+  ]
 }

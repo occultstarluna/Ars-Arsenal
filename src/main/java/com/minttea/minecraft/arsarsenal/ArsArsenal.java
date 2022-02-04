@@ -1,6 +1,6 @@
 package com.minttea.minecraft.arsarsenal;
 
-import com.hollingsworth.arsnouveau.setup.ItemsRegistry;
+import com.minttea.minecraft.arsarsenal.setup.registries.ItemRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,7 +21,7 @@ public class ArsArsenal {
     public static CreativeModeTab itemGroup = new CreativeModeTab(CreativeModeTab.getGroupCountSafe(), MODID) {
         @Override
         public @NotNull ItemStack makeIcon() {
-            return ItemsRegistry.CREATIVE_SPELLBOOK.getDefaultInstance();
+            return ItemRegistry.fireSigil.getDefaultInstance();
         }
     };
 

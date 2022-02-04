@@ -48,7 +48,6 @@ public class ItemRegistry {
     @ObjectHolder("air_robes")public static AirRobes airRobe;
     @ObjectHolder("air_leggings")public static AirRobes airLegs;
     @ObjectHolder("air_boots")public static AirRobes airBoots;
-    @ObjectHolder("primed_iron_ingot")public static Item primedIron;
     @ObjectHolder("source_steel_ingot")public static Item sourceSteelIngot;
     @ObjectHolder("sigil_of_pyromancy")public static Item fireSigil;
     @ObjectHolder("sigil_of_aquamancy")public static Item aquaSigil;
