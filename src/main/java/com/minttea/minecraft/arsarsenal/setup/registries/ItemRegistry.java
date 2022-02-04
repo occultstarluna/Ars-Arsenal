@@ -8,20 +8,15 @@ import com.minttea.minecraft.arsarsenal.client.renderer.item.FireHatRenderer;
 import com.minttea.minecraft.arsarsenal.common.armor.*;
 import com.minttea.minecraft.arsarsenal.common.items.SourceSteelAxe;
 import com.minttea.minecraft.arsarsenal.common.items.SourceSteelPick;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemTier;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.ObjectHolder;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
-
 
 
 @Mod.EventBusSubscriber(modid = ArsArsenal.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -60,67 +55,65 @@ public class ItemRegistry {
     @ObjectHolder("sigil_of_geomancy")public static Item earthSigil;
     @ObjectHolder("sigil_of_aethermancy")public static Item aetherSigil;
 
-
-
     @ObjectHolder("source_steel_axe")public static SourceSteelAxe chargedAxe;
     @ObjectHolder("source_steel_pickaxe")public static SourceSteelPick sourcePick;
 
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event)
     {
-
         final IForgeRegistry<Item> registry = event.getRegistry();
 
-//
-//        registry.register(new BloodTome(ISpellTier.Tier.ONE).setRegistryName("blood_tome_one"));
-        registry.register(new SourceSteelArmor(EquipmentSlotType.HEAD).setRegistryName("source_steel_helmet"));
-        registry.register(new SourceSteelArmor(EquipmentSlotType.CHEST).setRegistryName("source_steel_chestplate"));
-        registry.register(new SourceSteelArmor(EquipmentSlotType.LEGS).setRegistryName("source_steel_leggings"));
-        registry.register(new SourceSteelArmor(EquipmentSlotType.FEET).setRegistryName("source_steel_boots"));
 
-        registry.register(new FireHat().setRegistryName("fire_hat"));
-        registry.register(new FireRobes(EquipmentSlotType.HEAD).setRegistryName("fire_hood"));
-        registry.register(new FireRobes(EquipmentSlotType.CHEST).setRegistryName("fire_robes"));
-        registry.register(new FireRobes(EquipmentSlotType.LEGS).setRegistryName("fire_leggings"));
-        registry.register(new FireRobes(EquipmentSlotType.FEET).setRegistryName("fire_boots"));
+        Item[] items = {
+        new SourceSteelArmor(EquipmentSlot.HEAD).setRegistryName("source_steel_helmet"),
+        new SourceSteelArmor(EquipmentSlot.CHEST).setRegistryName("source_steel_chestplate"),
+        new SourceSteelArmor(EquipmentSlot.LEGS).setRegistryName("source_steel_leggings"),
+        new SourceSteelArmor(EquipmentSlot.FEET).setRegistryName("source_steel_boots"),
 
-        registry.register(new AquaHat().setRegistryName("aqua_hat"));
-        registry.register(new AquaRobes(EquipmentSlotType.HEAD).setRegistryName("aqua_hood"));
-        registry.register(new AquaRobes(EquipmentSlotType.CHEST).setRegistryName("aqua_robes"));
-        registry.register(new AquaRobes(EquipmentSlotType.LEGS).setRegistryName("aqua_leggings"));
-        registry.register(new AquaRobes(EquipmentSlotType.FEET).setRegistryName("aqua_boots"));
+        new FireHat().setRegistryName("fire_hat"),
+        new FireRobes(EquipmentSlot.CHEST).setRegistryName("fire_robes"),
+        new FireRobes(EquipmentSlot.LEGS).setRegistryName("fire_leggings"),
+        new FireRobes(EquipmentSlot.FEET).setRegistryName("fire_boots"),
 
-        registry.register(new EarthHat().setRegistryName("earth_hat"));
-        registry.register(new EarthRobes(EquipmentSlotType.HEAD).setRegistryName("earth_hood"));
-        registry.register(new EarthRobes(EquipmentSlotType.CHEST).setRegistryName("earth_robes"));
-        registry.register(new EarthRobes(EquipmentSlotType.LEGS).setRegistryName("earth_leggings"));
-        registry.register(new EarthRobes(EquipmentSlotType.FEET).setRegistryName("earth_boots"));
+        new AquaHat().setRegistryName("aqua_hat"),
+        new AquaRobes(EquipmentSlot.CHEST).setRegistryName("aqua_robes"),
+        new AquaRobes(EquipmentSlot.LEGS).setRegistryName("aqua_leggings"),
+        new AquaRobes(EquipmentSlot.FEET).setRegistryName("aqua_boots"),
 
-        registry.register(new AirHat().setRegistryName("air_hat"));
-        registry.register(new AirRobes(EquipmentSlotType.HEAD).setRegistryName("air_hood"));
-        registry.register(new AirRobes(EquipmentSlotType.CHEST).setRegistryName("air_robes"));
-        registry.register(new AirRobes(EquipmentSlotType.LEGS).setRegistryName("air_leggings"));
-        registry.register(new AirRobes(EquipmentSlotType.FEET).setRegistryName("air_boots"));
+        new EarthHat().setRegistryName("earth_hat"),
+        new EarthRobes(EquipmentSlot.CHEST).setRegistryName("earth_robes"),
+        new EarthRobes(EquipmentSlot.LEGS).setRegistryName("earth_leggings"),
+        new EarthRobes(EquipmentSlot.FEET).setRegistryName("earth_boots"),
 
-        registry.register(new Item(defaultItemProperties().stacksTo(64)).setRegistryName("primed_iron_ingot"));
-        registry.register(new Item(defaultItemProperties().stacksTo(64)).setRegistryName("source_steel_ingot"));
+        new AirHat().setRegistryName("air_hat"),
+        new AirRobes(EquipmentSlot.CHEST).setRegistryName("air_robes"),
+        new AirRobes(EquipmentSlot.LEGS).setRegistryName("air_leggings"),
+        new AirRobes(EquipmentSlot.FEET).setRegistryName("air_boots"),
 
-        registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_pyromancy"));
-        registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_aquamancy"));
-        registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_geomancy"));
-        registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_aethermancy"));
+        new Item(defaultItemProperties().stacksTo(64)).setRegistryName("primed_iron_ingot"),
+        new Item(defaultItemProperties().stacksTo(64)).setRegistryName("source_steel_ingot"),
 
-        registry.register(new SourceSteelAxe().setRegistryName("source_steel_axe"));
-        registry.register(new SourceSteelPick().setRegistryName("source_steel_pickaxe"));
+        new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_pyromancy"),
+        new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_aquamancy"),
+        new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_geomancy"),
+        new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_aethermancy"),
+
+        new SourceSteelAxe().setRegistryName("source_steel_axe"),
+        new SourceSteelPick().setRegistryName("source_steel_pickaxe")
+        };
+
+        for (final Item i: items) {
+            registry.register(i);
+        }
+
     }
 
     public static Item.Properties defaultItemProperties() {
         return new Item.Properties().tab(ArsArsenal.itemGroup);
     }
 
-    @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
-    public static void registerRenderers(final FMLClientSetupEvent event)
+    public static void registerRenderers(final EntityRenderersEvent.AddLayers event)
     {
 
         GeoArmorRenderer.registerArmorRenderer(FireHat.class, new FireHatRenderer());

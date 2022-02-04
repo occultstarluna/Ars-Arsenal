@@ -1,9 +1,8 @@
 package com.minttea.minecraft.arsarsenal.client.renderer.item;
 
 import com.minttea.minecraft.arsarsenal.ArsArsenal;
-import com.minttea.minecraft.arsarsenal.common.items.SourceSteelAxe;
 import com.minttea.minecraft.arsarsenal.common.items.SourceSteelPick;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class PickModel extends AnimatedGeoModel<SourceSteelPick> {

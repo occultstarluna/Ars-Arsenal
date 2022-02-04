@@ -1,14 +1,14 @@
 package com.minttea.minecraft.arsarsenal.common.armor;
 
 import com.hollingsworth.arsnouveau.api.spell.SpellSchools;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.util.DamageSource;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EquipmentSlot;
 
 import java.util.Arrays;
 
 public class FireRobes extends  SchoolArmor{
 
-    public FireRobes(EquipmentSlotType slot) {
+    public FireRobes(EquipmentSlot slot) {
         super(Materials.fire, slot, SpellSchools.ELEMENTAL_FIRE, Arrays.asList(DamageSource.ON_FIRE,
                 DamageSource.LAVA,
                 DamageSource.IN_FIRE,
@@ -16,10 +16,5 @@ public class FireRobes extends  SchoolArmor{
                 DamageSource.DRAGON_BREATH));
 
 
-    }
-    @Override
-    public String getTextureName() {
-
-        return "pyro_hat";
     }
 }
