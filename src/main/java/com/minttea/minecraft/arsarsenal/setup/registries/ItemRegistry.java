@@ -1,22 +1,16 @@
 package com.minttea.minecraft.arsarsenal.setup.registries;
 
 import com.minttea.minecraft.arsarsenal.ArsArsenal;
-import com.minttea.minecraft.arsarsenal.client.renderer.item.AirHatRenderer;
-import com.minttea.minecraft.arsarsenal.client.renderer.item.AquaHatRenderer;
-import com.minttea.minecraft.arsarsenal.client.renderer.item.EarthHatRenderer;
-import com.minttea.minecraft.arsarsenal.client.renderer.item.FireHatRenderer;
 import com.minttea.minecraft.arsarsenal.common.armor.*;
 import com.minttea.minecraft.arsarsenal.common.items.SourceSteelAxe;
 import com.minttea.minecraft.arsarsenal.common.items.SourceSteelPick;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.ObjectHolder;
-import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 
 @Mod.EventBusSubscriber(modid = ArsArsenal.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -89,7 +83,6 @@ public class ItemRegistry {
         new AirRobes(EquipmentSlot.LEGS).setRegistryName("air_leggings"),
         new AirRobes(EquipmentSlot.FEET).setRegistryName("air_boots"),
 
-        new Item(defaultItemProperties().stacksTo(64)).setRegistryName("primed_iron_ingot"),
         new Item(defaultItemProperties().stacksTo(64)).setRegistryName("source_steel_ingot"),
 
         new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_pyromancy"),
@@ -111,13 +104,5 @@ public class ItemRegistry {
         return new Item.Properties().tab(ArsArsenal.itemGroup);
     }
 
-    @SubscribeEvent
-    public static void registerRenderers(final EntityRenderersEvent.AddLayers event)
-    {
 
-        GeoArmorRenderer.registerArmorRenderer(FireHat.class, new FireHatRenderer());
-        GeoArmorRenderer.registerArmorRenderer(EarthHat.class, new EarthHatRenderer());
-        GeoArmorRenderer.registerArmorRenderer(AquaHat.class, new AquaHatRenderer());
-        GeoArmorRenderer.registerArmorRenderer(AirHat.class, new AirHatRenderer());
-    }
 }

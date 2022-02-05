@@ -1,10 +1,13 @@
 package com.minttea.minecraft.arsarsenal;
 
+import com.minttea.minecraft.arsarsenal.setup.ClientEvents;
 import com.minttea.minecraft.arsarsenal.setup.registries.ItemRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -29,6 +32,12 @@ public class ArsArsenal {
     public ArsArsenal() {
 
         MinecraftForge.EVENT_BUS.register(this);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
+    }
+
+    public void clientSetup(final FMLClientSetupEvent event){
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::registerRenderers);
+
     }
 
 

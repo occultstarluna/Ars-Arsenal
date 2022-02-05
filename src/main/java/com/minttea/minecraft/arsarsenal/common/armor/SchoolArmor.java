@@ -72,4 +72,5 @@ public class SchoolArmor extends MagicArmor implements IAnimatable {
      public String getTextureName() {
           return "magic_hat";
      }
+
 }
