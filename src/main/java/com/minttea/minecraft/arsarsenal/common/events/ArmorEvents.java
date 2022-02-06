@@ -6,11 +6,9 @@ import com.hollingsworth.arsnouveau.api.spell.SpellSchool;
 import com.hollingsworth.arsnouveau.api.spell.SpellSchools;
 import com.hollingsworth.arsnouveau.common.capability.CapabilityRegistry;
 import com.hollingsworth.arsnouveau.common.potions.ModPotions;
-import com.hollingsworth.arsnouveau.common.util.PortUtil;
 import com.minttea.minecraft.arsarsenal.ArsArsenal;
 import com.minttea.minecraft.arsarsenal.common.armor.SchoolArmor;
 import com.minttea.minecraft.arsarsenal.common.armor.SourceSteelArmor;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LightningBolt;
@@ -67,8 +65,6 @@ public class ArmorEvents {
                 Item item = stack.getItem();
                 if (item instanceof SchoolArmor &&((SchoolArmor) item).preventedTypes.contains(event.getSource())) {
                     discount++;
-                    PortUtil.sendMessage(entity, new TextComponent("Top kek " + discount));
-
                     if(!bonusMap.containsKey(((SchoolArmor) item).getSchool()))
                     {
                         bonusMap.put(((SchoolArmor) item).getSchool(), 1);
@@ -83,20 +79,20 @@ public class ArmorEvents {
                 ) {discount++;}
             }
 
-        if (bonusMap.get(SpellSchools.ELEMENTAL_FIRE) == 4&& (entity.isOnFire() && !(entity.isInLava()))) {
+        if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_FIRE,0) == 4&& (entity.isOnFire() && !(entity.isInLava()))) {
             entity.clearFire();
         }
-        if (bonusMap.get(SpellSchools.ELEMENTAL_WATER) == 4 && (entity.getAirSupply() < 1 && entity.isInWater())) {
+        if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_WATER,0) == 4 && (entity.getAirSupply() < 1 && entity.isInWater())) {
             entity.setAirSupply(entity.getMaxAirSupply());
             if(event.getSource() == DamageSource.DROWN)
             {
                 event.setAmount(event.getAmount()/2);
             }
         }
-        if (bonusMap.get(SpellSchools.ELEMENTAL_EARTH) == 4 && entity.getEyePosition().y() < 60 && ((Player) entity).getFoodData().getFoodLevel() < 1) {
+        if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_EARTH,0) == 4 && entity.getEyePosition().y() < 60 && ((Player) entity).getFoodData().getFoodLevel() < 1) {
             ((Player) entity).getFoodData().setFoodLevel(10);
         }
-        if (bonusMap.get(SpellSchools.ELEMENTAL_AIR) == 4 && event.getSource().isFall()) {
+        if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_AIR, 0) == 4 && event.getSource().isFall()) {
             event.setAmount(event.getAmount() / 2);
         }
             float finalDiscount = discount;
