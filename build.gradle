@@ -147,8 +147,8 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:nbtedit:3062106")
     compileOnly fg.deobf("curse.maven:patchouli:3126931")
     runtimeOnly fg.deobf("curse.maven:patchouli:3126931")
-    compileOnly fg.deobf("curse.maven:ars-noveau:3468666")
-    runtimeOnly fg.deobf("curse.maven:ars-noveau:3468666")
+    compileOnly fg.deobf("curse.maven:ars-noveau:3635648")
+    runtimeOnly fg.deobf("curse.maven:ars-noveau:3635648")
     compileOnly fg.deobf("curse.maven:jei:3280391")
     runtimeOnly fg.deobf("curse.maven:jei:3280391")
 }

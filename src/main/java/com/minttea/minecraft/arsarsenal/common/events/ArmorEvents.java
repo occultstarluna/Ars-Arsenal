@@ -2,24 +2,25 @@ package com.minttea.minecraft.arsarsenal.common.events;
 
 import com.hollingsworth.arsnouveau.api.event.SpellCastEvent;
 import com.hollingsworth.arsnouveau.api.event.SpellModifierEvent;
+import com.hollingsworth.arsnouveau.api.spell.SpellSchool;
+import com.hollingsworth.arsnouveau.api.spell.SpellSchools;
 import com.hollingsworth.arsnouveau.common.capability.ManaCapability;
 import com.hollingsworth.arsnouveau.common.potions.ModPotions;
-import com.hollingsworth.arsnouveau.common.util.PortUtil;
 import com.minttea.minecraft.arsarsenal.ArsArsenal;
 import com.minttea.minecraft.arsarsenal.common.armor.SchoolArmor;
 import com.minttea.minecraft.arsarsenal.common.armor.SourceSteelArmor;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.HashMap;
 
 @Mod.EventBusSubscriber(modid = ArsArsenal.MODID)
 public class ArmorEvents {
@@ -28,12 +29,12 @@ public class ArmorEvents {
     @SubscribeEvent
     public static void spellResolveEvent(SpellModifierEvent event)
     {
-        for(ItemStack stack:event.caster.getArmorSlots())
-        {
-            if(stack.getItem() instanceof SchoolArmor)
-            {
-                ((SchoolArmor) stack.getItem()).onModifier(event);
+        if( event.caster != null) {
+            for (ItemStack stack : event.caster.getArmorSlots()) {
+                if (stack.getItem() instanceof SchoolArmor) {
+                    ((SchoolArmor) stack.getItem()).onModifier(event);
 
+                }
             }
         }
     }
@@ -51,23 +52,47 @@ public class ArmorEvents {
             }
         }
         event.spell.setCost((int) (event.spell.getCastingCost() * (1-discount)));
-
     }
+
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
         LivingEntity entity = event.getEntityLiving();
         if(entity instanceof PlayerEntity) {
             int discount = 0;
+            HashMap<SpellSchool, Integer> bonusMap = new HashMap();
             for (ItemStack stack : entity.getArmorSlots()) {
                 Item item = stack.getItem();
                 if (item instanceof SchoolArmor &&((SchoolArmor) item).preventedTypes.contains(event.getSource())) {
                     discount++;
+                    if(!bonusMap.containsKey(((SchoolArmor) item).getSchool()))
+                    {
+                        bonusMap.put(((SchoolArmor) item).getSchool(), 1);
+                    } else {
+                        bonusMap.put(((SchoolArmor) item).getSchool(), bonusMap.get(((SchoolArmor) item).getSchool())+1);
+                    }
                 }
                 else if(item instanceof SourceSteelArmor
                         && (event.getSource().isMagic() ||
                             event.getSource().getEntity() instanceof LightningBoltEntity ||
                             event.getSource() == DamageSource.MAGIC)
                 ) {discount++;}
+            }
+
+            if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_FIRE, 0) == 4&& (entity.isOnFire() && !(entity.isInLava()))) {
+                entity.clearFire();
+            }
+            if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_WATER, 0) == 4 && (entity.getAirSupply() < 1 && entity.isInWater())) {
+                entity.setAirSupply(entity.getMaxAirSupply());
+                if(event.getSource() == DamageSource.DROWN)
+                {
+                    event.setAmount(event.getAmount()/2);
+                }
+            }
+            if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_EARTH, 0) == 4 && entity.getEyeY() < 60 && ((PlayerEntity) entity).getFoodData().getFoodLevel() < 1) {
+                ((PlayerEntity) entity).getFoodData().setFoodLevel(10);
+            }
+            if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_AIR, 0) == 4 && (event.getSource() == DamageSource.FALL || event.getSource() == DamageSource.FLY_INTO_WALL)) {
+                event.setAmount(event.getAmount() / 2);
             }
 
             int finalDiscount = discount;

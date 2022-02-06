@@ -9,9 +9,7 @@ import com.minttea.minecraft.arsarsenal.common.armor.*;
 import com.minttea.minecraft.arsarsenal.common.items.SourceSteelAxe;
 import com.minttea.minecraft.arsarsenal.common.items.SourceSteelPick;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemTier;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.RegistryEvent;
@@ -44,7 +42,7 @@ public class ItemRegistry {
     @ObjectHolder("aqua_leggings")public static AquaRobes aquaLegs;
     @ObjectHolder("aqua_boots")public static AquaRobes aquaBoots;
     @ObjectHolder("earth_hat")public static EarthHat earthHat;
-    @ObjectHolder("earth_hood")public static EarthHat earthHood;
+    @ObjectHolder("earth_hood")public static EarthRobes earthHood;
     @ObjectHolder("earth_robes")public static EarthRobes earthRobe;
     @ObjectHolder("earth_leggings")public static EarthRobes earthLegs;
     @ObjectHolder("earth_boots")public static EarthRobes earthBoots;
@@ -53,7 +51,6 @@ public class ItemRegistry {
     @ObjectHolder("air_robes")public static AirRobes airRobe;
     @ObjectHolder("air_leggings")public static AirRobes airLegs;
     @ObjectHolder("air_boots")public static AirRobes airBoots;
-    @ObjectHolder("primed_iron_ingot")public static Item primedIron;
     @ObjectHolder("source_steel_ingot")public static Item sourceSteelIngot;
     @ObjectHolder("sigil_of_pyromancy")public static Item fireSigil;
     @ObjectHolder("sigil_of_aquamancy")public static Item aquaSigil;
@@ -102,14 +99,11 @@ public class ItemRegistry {
         registry.register(new AirRobes(EquipmentSlotType.LEGS).setRegistryName("air_leggings"));
         registry.register(new AirRobes(EquipmentSlotType.FEET).setRegistryName("air_boots"));
 
-        registry.register(new Item(defaultItemProperties().stacksTo(64)).setRegistryName("primed_iron_ingot"));
         registry.register(new Item(defaultItemProperties().stacksTo(64)).setRegistryName("source_steel_ingot"));
-
         registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_pyromancy"));
         registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_aquamancy"));
         registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_geomancy"));
         registry.register(new Item(defaultItemProperties().stacksTo(4)).setRegistryName("sigil_of_aethermancy"));
-
         registry.register(new SourceSteelAxe().setRegistryName("source_steel_axe"));
         registry.register(new SourceSteelPick().setRegistryName("source_steel_pickaxe"));
     }

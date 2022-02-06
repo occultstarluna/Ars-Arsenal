@@ -20,29 +20,9 @@
       "tag": "forge:gems/mana"
     }
   ],
-  "item_5": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_6": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_7": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
-  "item_8": [
-    {
-      "tag": "forge:gems/mana"
-    }
-  ],
   "reagent": [
     {
-      "item": "arsarsenal:primed_iron_ingot"
+      "item": "minecraft:netherite_ingot"
     }
   ],
   "output": {

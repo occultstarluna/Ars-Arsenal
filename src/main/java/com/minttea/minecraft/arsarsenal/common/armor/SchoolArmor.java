@@ -4,14 +4,12 @@ import com.hollingsworth.arsnouveau.api.event.SpellModifierEvent;
 import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
 import com.hollingsworth.arsnouveau.api.spell.SpellSchool;
 import com.hollingsworth.arsnouveau.common.capability.ManaCapability;
-import com.hollingsworth.arsnouveau.common.util.PortUtil;
 import com.minttea.minecraft.arsarsenal.setup.registries.ItemRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -87,4 +85,8 @@ public class SchoolArmor extends MagicArmor implements IAnimatable {
      public String getTextureName() {
           return "magic_hat";
      }
+
+    public SpellSchool getSchool() {
+          return this.school;
+    }
 }
