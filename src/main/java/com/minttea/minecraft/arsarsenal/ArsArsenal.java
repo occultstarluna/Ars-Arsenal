@@ -32,13 +32,13 @@ public class ArsArsenal {
     public ArsArsenal() {
 
         MinecraftForge.EVENT_BUS.register(this);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
+     //   FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
     }
 
-    public void clientSetup(final FMLClientSetupEvent event){
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::registerRenderers);
-
-    }
+//    public void clientSetup(final FMLClientSetupEvent event){
+//        FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::registerRenderers);
+//
+//    }
 
 
 }

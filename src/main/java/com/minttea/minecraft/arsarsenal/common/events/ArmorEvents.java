@@ -95,13 +95,13 @@ public class ArmorEvents {
         if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_AIR, 0) == 4 && event.getSource().isFall()) {
             event.setAmount(event.getAmount() / 2);
         }
-            float finalDiscount = discount;
-            if(finalDiscount > 0 )
+        float finalDiscount = discount;
+        if(finalDiscount > 0 ){
             CapabilityRegistry.getMana(entity).ifPresent(mana -> event.getEntityLiving().addEffect(new MobEffectInstance(ModPotions.MANA_REGEN_EFFECT, 200, (int) (Math.floor(finalDiscount /2)))));
             event.setAmount(event.getAmount() - (event.getAmount() * (finalDiscount / 8)));
-
         }
 
+        }
     }
 
 }
