@@ -1,0 +1,32 @@
+{
+  "name": "Herramientas de Arcanita",
+  "icon": "arsarsenal:source_steel_axe",
+  "category": "arsarsenal:arsenal",
+  "sortnum" :8,
+  "pages": [
+    {
+      "type":"text",
+      "text": "Una vez que hayas creado tu Arcanita, utiliza tu Encantador Arcano para mejorar tus herramientas. Las herramientas de Arcanita aplican bonificaciones gratuitas a los hechizos correspondientes a su función."
+    },
+    {
+      "type":"text",
+      "text": ""
+    },
+    {
+      "type":"text",
+      "text": "El Hacha de Arcanita beneficia a los hechizos de Toque con Caer y Cortar, dandole un menor beneficio a cualquier otro efecto."
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:source_steel_axe"
+    },
+    {
+      "type":"text",
+      "text": "El pico de Arcanita beneficia a los hechizos de Toque con Romper y Aplastar, dandole un menor beneficio a cualquier otro efecto."
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:source_steel_pick"
+    }
+  ]
+}

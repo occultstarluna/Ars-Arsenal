@@ -1,0 +1,37 @@
+{
+  "name": "Túnicas Elementales",
+  "icon": "arsarsenal:fire_hat",
+  "category": "arsarsenal:arsenal",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Hay más formas de potenciar a un Mago. Combina tu túnica de archimago con los sellos de un elemento en una mesa de herrería para mejorar tu capacidad de lanzar hechizos elementales."
+    },
+    {
+      "type" : "patchouli:relations",
+      "entries":[
+        "arsarsenal:arsenal/aethermancy",
+        "arsarsenal:arsenal/aquamancy",
+        "arsarsenal:arsenal/geomancy",
+        "arsarsenal:arsenal/pyromancy"
+      ]
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:sigil_of_aethermancy"
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:sigil_of_aquamancy"
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:sigil_of_geomancy"
+    },
+	{
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:sigil_of_pyromancy"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Arcanita",
+  "icon": "arsarsenal:source_steel_ingot",
+  "category": "arsarsenal:arsenal",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Para fabricar Arcanita, debes imbuir la Netherita con Fuente."
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:source_steel_ingot"
+    },
+    {
+      "type":"text",
+      "text": "Una vez que hayas creado tu Arcanita, utiliza tu cámara de imbuir para revestir tu túnica de archimago. La armadura de Arcanita te proporciona más defensas mejoradas a costa de cierta capacidad de maná."
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:source_steel_helmet"
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:source_steel_chestplate"
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:source_steel_leggings"
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:source_steel_boots"
+    }
+
+  ]
+}

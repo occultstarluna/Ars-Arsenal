@@ -1,0 +1,17 @@
+{
+  "name": "Piromantes",
+  "icon": "arsarsenal:sigil_of_pyromancy",
+  "category": "arsarsenal:arsenal",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "arsarsenal:sigil_of_pyromancy",
+      "text": "Los Piromantes trabajan estrechamente con el fuego, y sus túnicas ofrecen una increíble protección contra él. Son maestros Elementales de la Escuela de Fuego y son capaces de potenciar los hechizos con efectos de su elemento."
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:sigil_of_pyromancy"
+    }
+  ]
+}

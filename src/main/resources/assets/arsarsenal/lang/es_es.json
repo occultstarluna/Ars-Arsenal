@@ -1,0 +1,37 @@
+{
+  "itemGroup.arsarsenal": "Ars Arsenal",
+  "item.arsarsenal.source_steel_helmet": "Casco de Arcanita",
+  "item.arsarsenal.source_steel_chestplate": "Peto de Arcanita",
+  "item.arsarsenal.source_steel_leggings": "Pantalones de Arcanita",
+  "item.arsarsenal.source_steel_boots": "Botas de Arcanita",
+  "item.arsarsenal.source_steel_axe": "Hacha de Arcanita",
+  "item.arsarsenal.source_steel_pickaxe": "Pico de Arcanita",
+  "item.arsarsenal.source_steel_ingot": "Arcanita",
+
+  "item.arsarsenal.sigil_of_pyromancy": "Sello de Fuego",
+  "item.arsarsenal.fire_hat": "Capucha de Piromante",
+  "item.arsarsenal.fire_robes": "Túnica de Piromante",
+  "item.arsarsenal.fire_leggings": "Pantalones de Piromante",
+  "item.arsarsenal.fire_boots": "Botas de Piromante",
+
+  "item.arsarsenal.sigil_of_aquamancy": "Sello de Agua",
+  "item.arsarsenal.aqua_hat": "Capucha de Acuamante",
+  "item.arsarsenal.aqua_robes": "Túnica de Acuamante",
+  "item.arsarsenal.aqua_leggings": "Pantalones de Acuamante",
+  "item.arsarsenal.aqua_boots": "Botas de Acuamante",
+
+  "item.arsarsenal.sigil_of_geomancy": "Sello de Tierra",
+  "item.arsarsenal.earth_hat": "Capucha de Geomante",
+  "item.arsarsenal.earth_robes": "Túnica de Geomante",
+  "item.arsarsenal.earth_leggings": "Pantalones de Geomante",
+  "item.arsarsenal.earth_boots": "Botas de Geomante",
+
+  "item.arsarsenal.sigil_of_aethermancy": "Sello de Aire",
+  "item.arsarsenal.air_hat": "Capucha de Etermista",
+  "item.arsarsenal.air_robes": "Túnica de Etermista",
+  "item.arsarsenal.air_leggings": "Pantalones de Etermista",
+  "item.arsarsenal.air_boots": "Botas de Etermista"
+  
+  
+
+}

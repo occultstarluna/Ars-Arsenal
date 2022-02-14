@@ -1,0 +1,17 @@
+{
+  "name": "Etermistas",
+  "icon": "arsarsenal:sigil_of_aethermancy",
+  "category": "arsarsenal:arsenal",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "arsarsenal:sigil_of_aethermancy",
+      "text": "Los Etermistas prefieren trabajar en las nubes, y sus túnicas les permiten aterrizar con seguridad desde alturas que la mayoría no puede. Son maestros Elementales de la Escuela de Aire y son capaces de potenciar los hechizos con efectos de su elemento."
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:sigil_of_aethermancy"
+    }
+  ]
+}

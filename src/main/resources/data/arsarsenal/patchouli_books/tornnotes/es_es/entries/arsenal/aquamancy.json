@@ -1,0 +1,17 @@
+{
+  "name": "Acuamantes",
+  "icon": "arsarsenal:sigil_of_aquamancy",
+  "category": "arsarsenal:arsenal",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "arsarsenal:sigil_of_aquamancy",
+      "text": "Los Acuamantes prefieren trabajar en entornos más húmedos, y sus túnicas les permiten intercambiar algo de fuerza vital. Son maestros Elementales de la Escuela de Agua y son capaces de potenciar los hechizos con efectos de su elemento."
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:sigil_of_aquamancy"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Geomantes",
+  "icon": "arsarsenal:sigil_of_geomancy",
+  "category": "arsarsenal:arsenal",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "arsarsenal:sigil_of_geomancy",
+      "text": "Los Geomantes trabajan estrechamente con la Tierra, y sus túnicas les permiten realizar viajes más largos bajo tierra. Son maestros Elementales de la Escuela de Tierra y son capaces de potenciar los hechizos con efectos de su elemento."
+    },
+    {
+      "type": "ars_nouveau:imbuement_recipe",
+      "recipe": "arsarsenal:sigil_of_geomancy"
+    }
+  ]
+}
