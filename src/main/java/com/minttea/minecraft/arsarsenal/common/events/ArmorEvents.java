@@ -58,9 +58,9 @@ public class ArmorEvents {
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
         LivingEntity entity = event.getEntityLiving();
-        if(entity instanceof Player) {
+        if (entity instanceof Player) {
             int discount = 0;
-            HashMap<SpellSchool, Integer> bonusMap = new HashMap();
+            HashMap<SpellSchool, Integer> bonusMap = new HashMap<>();
             for (ItemStack stack : entity.getArmorSlots()) {
                 Item item = stack.getItem();
                 if (item instanceof SchoolArmor &&((SchoolArmor) item).preventedTypes.contains(event.getSource())) {
@@ -79,7 +79,7 @@ public class ArmorEvents {
                 ) {discount++;}
             }
 
-        if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_FIRE,0) == 4&& (entity.isOnFire() && !(entity.isInLava()))) {
+        if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_FIRE,0) == 4 && (entity.isOnFire() && !(entity.isInLava()))) {
             entity.clearFire();
         }
         if (bonusMap.getOrDefault(SpellSchools.ELEMENTAL_WATER,0) == 4 && (entity.getAirSupply() < 1 && entity.isInWater())) {

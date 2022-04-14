@@ -10,6 +10,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.IItemRenderProperties;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 import javax.annotation.Nullable;
@@ -18,7 +19,7 @@ import java.util.function.Consumer;
 
 public class MagicHat extends SchoolArmor{
 
-    protected Class thisClass = MagicHat.this.getClass();
+    protected Class<? extends MagicHat> thisClass = MagicHat.this.getClass();
 
     public MagicHat(ArmorMaterial material, SpellSchool school, List<DamageSource> preventedTypes) {
         super(material, EquipmentSlot.HEAD, school, preventedTypes);
@@ -27,19 +28,18 @@ public class MagicHat extends SchoolArmor{
 
 
     @Override
-    public void initializeClient(Consumer<IItemRenderProperties> consumer) {
+    public void initializeClient(@NotNull Consumer<IItemRenderProperties> consumer) {
         super.initializeClient(consumer);
         consumer.accept(new IItemRenderProperties() {
-
-            @SuppressWarnings("unchecked")
             @Override
-            public <A extends HumanoidModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack,
-                                                                EquipmentSlot armorSlot, A _default) {
-                return (A) GeoArmorRenderer.getRenderer(thisClass).applyEntityStats(_default)
+            public HumanoidModel<?> getArmorModel(LivingEntity entityLiving, ItemStack itemStack,
+                                                                EquipmentSlot armorSlot, HumanoidModel<?> _default) {
+                return GeoArmorRenderer.getRenderer(thisClass).applyEntityStats(_default)
                         .applySlot(armorSlot).setCurrentItem(entityLiving, itemStack, armorSlot);
             }
         });
     }
+
     @Nullable
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
