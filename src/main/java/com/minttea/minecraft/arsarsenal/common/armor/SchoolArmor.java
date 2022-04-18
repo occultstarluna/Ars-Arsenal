@@ -21,7 +21,7 @@ public class SchoolArmor extends MagicArmor implements IAnimatable {
           return school;
      }
 
-     private SpellSchool school;
+     private final SpellSchool school;
      public final List<DamageSource> preventedTypes;
 
      public SchoolArmor(ArmorMaterial material, EquipmentSlot slot, SpellSchool school, List<DamageSource> preventedTypes) {
@@ -30,7 +30,6 @@ public class SchoolArmor extends MagicArmor implements IAnimatable {
           this.preventedTypes = preventedTypes;
           this.repairCost = 20;
      }
-
 
      @Override
      public int getMaxManaBoost(ItemStack i){
@@ -52,7 +51,7 @@ public class SchoolArmor extends MagicArmor implements IAnimatable {
      public double getDiscount(List<AbstractSpellPart> recipe)
      {
           for (AbstractSpellPart part: recipe) {
-               if(part.getSchools().contains(this.school))
+               if (school.isPartOfSchool(part))
                     return 0.1;
           }
           return 0;
