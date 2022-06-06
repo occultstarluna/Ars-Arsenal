@@ -34,7 +34,7 @@ public class MagicHat extends SchoolArmor{
             @Override
             public HumanoidModel<?> getArmorModel(LivingEntity entityLiving, ItemStack itemStack,
                                                                 EquipmentSlot armorSlot, HumanoidModel<?> _default) {
-                return GeoArmorRenderer.getRenderer(thisClass).applyEntityStats(_default)
+                return GeoArmorRenderer.getRenderer(thisClass, entityLiving).applyEntityStats(_default)
                         .applySlot(armorSlot).setCurrentItem(entityLiving, itemStack, armorSlot);
             }
         });
@@ -44,7 +44,7 @@ public class MagicHat extends SchoolArmor{
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
         Class<? extends ArmorItem> clazz = this.getClass();
-        GeoArmorRenderer renderer = GeoArmorRenderer.getRenderer(clazz);
+        GeoArmorRenderer renderer = GeoArmorRenderer.getRenderer(clazz, entity);
         return renderer.getTextureLocation((ArmorItem) stack.getItem()).toString();
     }
 
