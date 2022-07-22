@@ -139,8 +139,8 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    compileOnly fg.deobf("curse.maven:geckolib:3629666")
-    runtimeOnly fg.deobf("curse.maven:geckolib:3629666")
+    compileOnly fg.deobf("curse.maven:geckolib:3885196")
+    runtimeOnly fg.deobf("curse.maven:geckolib:3885196")
     compileOnly fg.deobf("curse.maven:curios:3122651")
     runtimeOnly fg.deobf("curse.maven:curios:3122651")
     compileOnly fg.deobf("curse.maven:nbtedit:3062106")
