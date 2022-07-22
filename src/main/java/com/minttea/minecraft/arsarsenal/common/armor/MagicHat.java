@@ -35,7 +35,7 @@ public class MagicHat extends SchoolArmor{
             public HumanoidModel<?> getArmorModel(LivingEntity entityLiving, ItemStack itemStack,
                                                                 EquipmentSlot armorSlot, HumanoidModel<?> _default) {
                 return GeoArmorRenderer.getRenderer(thisClass, entityLiving).applyEntityStats(_default)
-                        .applySlot(armorSlot).setCurrentItem(entityLiving, itemStack, armorSlot);
+                        .setCurrentItem(entityLiving, itemStack, armorSlot).applySlot(armorSlot);
             }
         });
     }
