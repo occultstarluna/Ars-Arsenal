@@ -3,7 +3,7 @@ package com.minttea.minecraft.arsarsenal.client.renderer.item;
 import com.minttea.minecraft.arsarsenal.ArsArsenal;
 import com.minttea.minecraft.arsarsenal.common.armor.FireHat;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.ars_nouveau.geckolib3.model.AnimatedGeoModel;
 
 public class FireHatModel extends AnimatedGeoModel<FireHat> {
     @Override

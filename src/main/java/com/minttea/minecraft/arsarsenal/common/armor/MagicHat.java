@@ -11,7 +11,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.IItemRenderProperties;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
+import software.bernie.ars_nouveau.geckolib3.renderers.geo.GeoArmorRenderer;
 
 import javax.annotation.Nullable;
 import java.util.List;
